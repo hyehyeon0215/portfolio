@@ -1,0 +1,52 @@
+#mainPage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font: bold 40px/1 'NotoSansKR';
+        margin-bottom: 50px;
+    }
+
+    p {
+        font: 18px/1.5 'NotoSansKR';
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    ul {
+        display: flex;
+        margin: 0 auto;
+
+        >li {
+            flex: 1;
+
+            a {
+                display: block;
+                width: 200px;
+                height: 200px;
+                position: relative;
+
+                .Btn-txt {
+                    z-index: 1;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-weight: bold;
+                    text-align: center;
+
+                    &.lightBtn-txt {
+                        color: $dark;
+                    }
+
+                    &.darkBtn-txt {
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
+}

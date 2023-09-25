@@ -1,0 +1,1243 @@
+.vs-wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    header {
+        position: relative;
+        width: 100%;
+        height: 35px;
+        background-color: $light;
+        border-bottom: 1px solid $light-border;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+
+        .header-left {
+            display: flex;
+            flex: 4;
+            height: 100%;
+
+            h1 {
+                width: 50px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+                a {
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    position: relative;
+        
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .header-menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+        
+                >li {
+                    &:first-child {
+                        a {
+                            font-weight: bold;
+                        }
+                    }
+        
+                    >a {
+                        display: block;
+                        font: 14px/1 'NotoSansKR';
+                        color: $light-font3;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5px;
+                        padding: 5px 7px;
+
+                        &:hover {
+                            background-color: $light-border;
+                            color: $light-font1;
+                        }
+                    }
+
+                    .header-sub {
+                        display: none;
+                        position: absolute;
+                        top: 30px;
+                        width: 300px;
+                        background-color: #fff;
+                        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.04);
+                        z-index: 3;
+                        border-radius: 7px;
+                        border: 1px solid #ddd;
+                        padding: 4px;
+                        
+                        li {
+                            padding: 7px 20px;
+                            display: flex;
+                            justify-content: space-between;
+                            border-radius: 4px;
+        
+                            a {
+                                display: block;
+                                font: 14px/1 '맑은 고딕';
+                                color: #333;
+                                font-weight: bold;
+                            }
+
+                            span {
+                                display: block;
+                                font: 12px/1 '맑은 고딕';
+                                color: #333;
+                                cursor: default;
+
+                                &.marginleft {
+                                    display: inline-block;
+                                    margin-left: 1px;
+                                }
+                            }
+
+                            &:hover {
+                                background-color: #dfdfdf;
+                            }
+
+                            &.sub-line {
+                                width: 100%;
+                                height: 14px;
+                                position: relative;
+                                &::after {
+                                    display: block;
+                                    width: calc(100% + 8px);
+                                    height: 0.5px;
+                                    opacity: .7;
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    background-color: #ddd;
+                                }
+                                &:hover {
+                                    background-color: inherit;
+                                }
+                            }
+                        }
+                    
+                    }
+
+                    &.on {
+
+                        >a {
+                            background-color: $light-border;
+                            color: $light-font1;
+                        }
+                        .header-sub {
+                            display: block;
+                        }
+                    }
+                }
+        
+            }
+        }
+
+        .header-center {
+            flex: 3;
+
+            >p {
+                width: 100%;
+                height: 24px;
+                font: 12px/1 'NotoSansKR';
+                color: $light-font3;
+                background-color: #ececec;
+                border: 1px solid #cccccc;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+
+                >img {
+                    height: 22px;
+                    object-fit: cover;
+
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .header-right {
+            flex: 4;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            gap: 5px;
+
+            >ul {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &.layout-menu {
+                    gap: 5px;
+                    >li {
+                        >a {
+                            display: block;
+                            width: 25px;
+                            height: 25px;
+                            position: relative;
+                            border-radius: 5px;
+
+                            >img {
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: 1;
+                                opacity: 1;
+
+                                &:nth-of-type(2) {
+                                    z-index: 0;
+                                    opacity: 0;
+                                }
+                            }
+
+                            &:hover {
+                                background-color: #dfdfdf;
+                            }
+                        }
+                    }
+                }
+
+                &.program-menu {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    >li {
+                        height: 100%;
+                        >a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 50px;
+                            height: 100%;
+                            position: relative;
+
+                            >img {
+                                position: absolute;
+                                width: 24px;
+                                height: 24px;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: 1;
+                                opacity: 1;
+
+                                &:nth-of-type(2) {
+                                    z-index: 0;
+                                    opacity: 0;
+                                }
+                            }
+
+                            &:hover {
+                                background-color: #dfdfdf;
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            >a {
+                                &:hover {
+
+                                    background-color: red;
+
+                                    img {
+                                        &:nth-of-type(2) {
+                                            z-index: 1;
+                                            opacity: 1;
+                                        }
+
+                                        &:nth-of-type(1) {
+                                            z-index: 0;
+                                            opacity: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        height: calc(100vh - 55px);
+        display: flex;
+
+        .main-left {
+            display: flex;
+
+            .icon-tab {
+                width: 50px;
+                height: 100%;
+                background-color: $light;
+                border-right: 1px solid $light-border;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                >li {
+                    width: 100%;
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        li {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 50px;
+        
+                            .bar {
+                                width: 3px;
+                                height: 50px;
+                                background-color: $blue;
+                                position: absolute;
+                                z-index: 100;
+                                left: 0px;
+                                opacity: 0;
+                            }
+        
+        
+                            a {
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                position: relative;
+                                
+                                img {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    z-index: 1;
+                                    opacity: 1;
+
+                                    &:nth-of-type(2) {
+                                        z-index: 0;
+                                        opacity: 0;
+                                    }
+                                }
+                            
+                            }
+
+                            &.on {
+                                .bar {
+                                    opacity: 1;
+                                }
+                            }
+        
+                        }
+                    }
+
+
+                }
+            }
+
+            .main-menu {
+                width: 200px;
+                height: calc(100vh - 55px);
+                background-color: #f8f8f8;
+                border-right: 1px solid #dfdfdf;
+                display: flex;
+                flex-direction: column;
+
+                >li {
+                    &:nth-of-type(1) {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        top: 0;
+                        left: 0;
+                        padding: 15px 20px;
+        
+                        p {
+                            font: 11px/1 'arial';
+                            color: #000;
+                        }
+        
+                        .dot {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            gap: 3px;
+        
+                            span {
+                                width: 2px;
+                                height: 2px;
+                                border-radius: 50%;
+                                background-color: #000;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        width: 100%;
+                        height: calc(100% - 32px);
+                        position: relative;
+
+                        .menu_1depth {
+                            >li {
+
+                                >a {
+                                    display: flex;
+                                    width: 100%;
+                                    height: 24px;
+                                    font: bold 14px/1 '맑은 고딕';
+                                    color: #000;
+                                    align-items: center;
+                                    padding: 5px;
+
+                                    &::before {
+                                        display: inline-block;
+                                        content: '∨';
+                                        margin-right: 5px;
+                                    }
+
+                                    &.off {
+                                        &::before {
+                                            transform: rotate(-90deg);
+                                        }
+                                    }
+
+                                }
+
+                                .menu_2depth {
+                                    opacity: 1;
+
+                                    >li {
+                                        position: relative;
+
+                                        .line {
+                                            display: block;
+                                            position: absolute;
+                                            width: 1px;
+                                            height: 47px;
+                                            top: 0px;
+                                            left: 9px;
+                                            background-color: #ddd;
+                                            z-index: 3;
+                                            transition: 0.3s;
+
+                                            &.focusing {
+                                                background-color: #aaa;
+                                            }
+                                        }
+
+                                        >a {
+                                            display: block;
+                                            position: relative;
+                                            width: 100%;
+                                            padding-left: 30px;
+                                            height: 24px;
+                                            font: 14px/24px '맑은 고딕';
+                                            color: #000;
+                                            border: 1px solid transparent;
+
+                                            &.bracket {
+                                                &::before {
+                                                    display: block;
+                                                    position: absolute;
+                                                    content: '∨';
+                                                    left: 15px;
+                                                }
+
+                                                &.off {
+                                                    &::before {
+                                                        transform: rotate(-90deg);
+                                                    }
+                                                }
+                                            }
+
+                                            &:hover {
+                                                background-color: #f2f2f2;
+                                            }
+
+                                            &:focus {
+                                                border: 1px solid $blue;
+                                                background-color: #e8e8e8;
+                                            }
+
+                                            &.open {
+                                                background-color: #e4e6f1;
+                                            }
+
+                                        }
+
+                                        .menu_3depth {
+                                            overflow: hidden;
+                                            opacity: 1;
+
+                                            >li {
+                                                
+                                                .line {
+                                                    display: block;
+                                                    position: absolute;
+                                                    width: 1px;
+                                                    height: 120px;
+                                                    top: 24px;
+                                                    left: 20px;
+                                                    background-color: #ddd;
+                                                    z-index: 3;
+                                                    transition: 0.3s;
+
+                                                    &.focusing {
+                                                        background-color: #aaa;
+                                                    }
+                                                }
+
+                                                >a {
+                                                    display: flex;
+                                                    position: relative;
+                                                    padding-left: 30px;
+                                                    width: 100%;
+                                                    height: 24px;
+                                                    gap: 5px;
+                                                    align-items: center;
+                                                    width: 100%;
+                                                    font: 13px/1 '맑은 고딕';
+                                                    color: #000;
+                                                    border: 1px solid transparent;
+
+                                                    >img {
+                                                        width: 14px;
+                                                        height: 14px;
+                                                        object-fit: cover;
+                                                    }
+                                                    
+                                                    &:focus {
+                                                        border: 1px solid $blue;
+                                                        background-color: #e8e8e8;
+                                                    }
+
+                                                }
+
+                                                &:hover {
+                                                    background-color: #f2f2f2;
+                                                }
+
+                                                &.open {
+                                                    background-color: #e4e6f1;
+                                                }
+                                            }
+
+                                            &.off {
+                                                height: 0px;
+                                                overflow: hidden;
+                                                padding: 0px;
+                                                opacity: 0;
+                                            }
+                                        }
+
+
+                                    }
+
+                                    &.off {
+                                        height: 0px;
+                                        overflow: hidden;
+                                        padding: 0px;
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        >.menu-bottom {
+                            width: 100%;
+                            position: absolute;
+                            top: calc(100% - 90px);
+                            transition: top 0.5s;
+
+                            li {
+                                border-top: 1px solid #dfdfdf;
+                                a {
+                                    display: block;
+                                    font: bold 14px/1 '맑은 고딕';
+                                    color: #000;
+                                    padding: 5px;
+
+                                    &::before {
+                                        display: inline-block;
+                                        content: '∨';
+                                        transform: rotate(-90deg);
+                                        margin-right: 5px;
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    border-top: none;
+
+                                    .switch-toggle-box {
+                                        width: 100%;
+                                        height: 40px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        input[type=checkbox]{
+                                            height: 0;
+                                            width: 0;
+                                            visibility: hidden;
+                                        }
+                                        
+                                        label {
+                                            cursor: pointer;
+                                            text-indent: -9999px;
+                                            width: 50%;
+                                            height: 30px;
+                                            background: grey;
+                                            display: block;
+                                            border-radius: 100px;
+                                            position: relative;
+                                        }
+                                        
+                                        label:after {
+                                            content: '';
+                                            position: absolute;
+                                            top: 5px;
+                                            left: 5px;
+                                            width: 20px;
+                                            height: 20px;
+                                            background: #fff;
+                                            border-radius: 90px;
+                                            transition: 0.3s;
+                                        }
+                                        
+                                        input:checked + label {
+                                            background: #bada55;
+                                        }
+                                        
+                                        input:checked + label:after {
+                                            left: calc(100% - 5px);
+                                            transform: translateX(-100%);
+                                        }
+                                        
+                                        label:active:after {
+                                            width: 130px;
+                                        }
+                                        
+                                    }
+                                }
+                            }
+
+                            &.gotop {
+                                top: 24px;
+                            }
+                        }
+    
+                    }
+
+
+                }
+            }
+        }
+
+        .main-right {
+            width: calc(100% - 250px);
+            height: 100%;
+            overflow: hidden;
+        
+            .active-tab {
+                width: 100%;
+                height: 32px;
+                background-color: $light;
+                border-bottom: 1px solid $light-border;
+                position: relative;
+                z-index: 2;
+                display: flex;
+        
+                >li{
+                    min-width: 140px;
+                    border-right: 1px solid $light-border;
+        
+                    >a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 14px;
+                        color: #000;
+        
+                        &:hover {
+                            background-color: #fff;
+                        }
+                    }
+        
+                    &.active {
+                        background-color: #fff;
+                        margin-bottom: 0px;
+                        box-shadow: 0 1px 1px #f8f8f8;
+                        position: relative;
+        
+                        &::before {
+                            display: block;
+                            content: '';
+                            width: 100%;
+                            height: 1px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: $blue;
+                        }
+                    }
+        
+                    &.portfolio-tab {
+                        display: none;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 5px;
+                        padding: 0 10px;
+        
+                        >a {
+                            width: auto;
+                            height: 100%;
+                            display: flex;
+                            gap: 5px;
+                            font-size: 14px;
+        
+                            >img {
+                                width: 16px;
+                                height: 16px;
+                                object-fit: cover;
+                            }
+                            
+                            &.tabclose {
+                                visibility: hidden;
+                                width: 18px;
+                                height: 18px;
+                                border: none;
+                                outline: none;
+                                background-color: #fff;
+                                cursor: pointer;
+                                border-radius: 5px;
+            
+                                >img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+
+                                    &:nth-of-type(2) {
+                                        display: none;
+                                    }
+                                }
+            
+                                &:hover {
+                                    background-color: #ececec;
+                                }
+                            }
+            
+                        }
+        
+                        &:hover {
+                            background-color: #fff;
+        
+                            a {
+                                &.tabclose {
+                                    visibility: visible;
+                                }
+                            }
+                        }
+        
+                        &.on {
+                            display: flex;
+                        }
+        
+                        &.active {
+                            a {
+                                &.tabclose {
+                                    display: block;
+                                }
+                            }
+                        }
+        
+                    }
+                }
+            }
+        
+            .active-route {
+                width: 100%;
+                height: 24px;
+                background-color: #fff;
+                box-shadow: 0 1px 5px #ddd;
+                padding: 0 15px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                z-index: 2;
+        
+                >span {
+                    font-size: 12px;
+                    color: #666;
+                }
+            }
+        
+            .content-box {
+                width: 100%;
+                height: calc(100% - 20px);
+                overflow-y: scroll;
+                position: relative;
+                padding-bottom: 20px;
+                background-color: #fff;
+        
+                .content {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                    display: none;
+        
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: 20px;
+        background-color: $light;
+        border-top: 1px solid $light-border;
+        display: flex;
+        gap: 10px;
+
+        .blue-icon {
+            width: 40px;
+            height: 100%;
+            background-color: $blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            >img {
+                width: 50%;
+                height: 80%;
+                
+            }
+        }
+
+        ul {
+            display: flex;
+            height: 100%;
+            gap: 5px;
+            li {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                gap: 5px;
+                >img {
+                    width: 15px;
+                    height: 15px;
+                    object-fit: cover;
+
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+
+                span {
+                    color: #000;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    &.dark-theme {
+        header {
+            background-color: $dark;
+            border-bottom: 1px solid $dark-border;
+
+            .header-left {
+                .header-menu {
+                    >li {
+                        >a {
+                            color: #bbbbbb;
+
+                            &:hover {
+                                background-color: #333;
+                            }
+                        }
+
+                        .header-sub {
+                            background-color: $dark-bg;
+                            border: 1px solid #454545;
+
+                            >li {
+                                >a {
+                                    color: #bbbbbb;
+                                }
+
+                                span {
+                                    color: #bbbbbb;
+                                }
+
+                                &:hover {
+                                    background-color: #04395e;
+                                }
+
+                                &.sub-line {
+                                    &::after {
+                                        background-color: #555;   
+                                    }
+
+                                    &:hover {
+                                        background-color: inherit;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.on {
+                            >a {
+                                background-color: #333;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .header-center {
+                >p {
+                    background-color: #242424;
+                    border: 1px solid #454545;
+                    color: #999;
+
+                    >img {
+                        &:first-of-type {
+                            display: none;
+                        }
+                        &:last-of-type {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .header-right {
+                >ul {
+                    &.layout-menu {
+                        >li {
+                            >a {
+                                >img {
+                                    &:nth-of-type(2) {
+                                        z-index: 1;
+                                        opacity: 1;
+                                    }
+                                    &:nth-of-type(1) {
+                                        z-index: 0;
+                                        opacity: 0;
+                                    }
+                                }
+
+                                &:hover {
+                                    background-color: #333;
+                                }
+                            }
+                        }
+                    }
+
+                    &.program-menu {
+                        >li {
+                            >a {
+                                >img {
+                                    &:nth-of-type(2) {
+                                        z-index: 1;
+                                        opacity: 1;
+                                    }
+                                    &:nth-of-type(1) {
+                                        z-index: 0;
+                                        opacity: 0;
+                                    }
+                                }
+
+                                &:hover {
+                                    background-color: #333;
+                                }
+                            }
+
+                            &:nth-of-type(3) {
+                                >a {
+                                    &:hover {
+    
+                                        background-color: red;
+    
+                                        img {
+                                            &:nth-of-type(2) {
+                                                z-index: 1;
+                                                opacity: 1;
+                                            }
+    
+                                            &:nth-of-type(1) {
+                                                z-index: 0;
+                                                opacity: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            .main-left {
+                .icon-tab {
+                    background-color: $dark;
+                    border-right: 1px solid $dark-border;
+
+                    >li {
+                        ul {
+                            li {
+                                a {
+                                    img {
+                                        &:nth-of-type(1) {
+                                            z-index: 0;
+                                            opacity: 0;
+                                        }
+                                        &:nth-of-type(2) {
+                                            z-index: 1;
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .main-menu {
+                    background-color: $dark;
+                    border-right: $dark-border;
+
+                    >li {
+                        &:nth-of-type(1) {
+                            p {
+                                color: #bbb;
+                            }
+
+                            .dot {
+                                span {
+                                    background-color: #bbb;
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            .menu_1depth {
+                                >li {
+                                    >a {
+                                        color: #bbb;
+                                    }
+
+                                    .menu_2depth {
+                                        >li {
+                                            .line {
+                                                background-color: #555;
+                                            
+                                                &.focusing {
+                                                    background-color: #666;
+                                                }
+                                            }
+
+                                            >a {
+                                                color: #bbb;
+                                                border: 1px solid transparent;
+                                            
+                                                &:hover {
+                                                    background-color: #2a2d2e;
+                                                }
+
+                                                &:focus {
+                                                    border: 1px solid $blue;
+                                                    background-color: #04395e;
+                                                }
+
+                                                &.open {
+                                                    background-color: #37373d;
+                                                }
+                                            }
+
+                                            .menu_3depth {
+                                                >li {
+                                                    .line {
+                                                        background-color: #555;
+                                            
+                                                        &.focusing {
+                                                            background-color: #666;
+                                                        }
+                                                    }
+
+                                                    >a {
+                                                        color: #bbb;
+                                                        border: 1px solid transparent;
+        
+                                                        &:focus {
+                                                            border: 1px solid $blue;
+                                                            background-color: #04395e;
+                                                        }
+
+                                                    }
+
+                                                    &:hover {
+                                                        background-color: #2a2d2e;
+                                                    }
+    
+                                                    &.open {
+                                                        background-color: #37373d;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .menu-bottom {
+                                li {
+                                    border-top: 1px solid #666;
+
+                                    a {
+                                        color: #bbb;
+                                    }
+
+                                    &:last-of-type {
+                                        border-top: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main-right {
+                .active-tab {
+                    background-color: $dark;
+                    border-bottom: 1px solid $dark-border;
+
+                    >li {
+                        border-right: 1px solid $dark-border;
+
+                        >a {
+                            color: #bbb;
+
+                            &:hover {
+                                background-color: #1f1f1f;
+                            }
+                        }
+
+                        &.active {
+                            background-color: #1f1f1f;
+                            box-shadow: 0 1px 1px #222;
+                        }
+
+                        &.portfolio-tab {
+                            >a {
+                                &.tabclose {
+                                    background-color: #1f1f1f;
+
+                                    >img {
+                                        &:nth-of-type(2) {
+                                            display: block;
+                                        }
+
+                                        &:nth-of-type(1) {
+                                            display: none;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        background-color: #1f1f1f;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            background-color: #1f1f1f;
+                        }
+                    }
+                }
+
+                .active-route {
+                    background-color: #1f1f1f;
+                    box-shadow: 0 1px 5px #111;
+
+
+                    >span {
+                        color: #bbb;
+                    }
+                }
+
+                .content-box {
+                    background-color: #1f1f1f;
+                }
+            }
+        }
+
+        footer {
+            background-color: $dark;
+            border-top: 1px solid $dark-border;
+
+            ul {
+                li {
+                    img {
+                        &:first-of-type {
+                            display: none;
+                        }
+
+                        &:last-of-type {
+                            display: block;
+                        }
+                    }
+
+                    span {
+                        color: #bbb;
+                    }
+                }
+            }
+        }
+    }
+}
