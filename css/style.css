@@ -1449,5 +1449,8 @@ a {
 #mainPage ul > li a .Btn-txt.darkBtn-txt {
   color: #f8f8f8;
 }
+#mainPage .hitBtn {
+  visibility: hidden;
+}
 
 /*# sourceMappingURL=style.css.map */
