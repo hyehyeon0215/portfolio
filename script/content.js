@@ -4,6 +4,8 @@ const active_route = document.querySelector('.active-route > span');
 const content_list = document.querySelectorAll('.content');
 
 const main_2depth = document.querySelectorAll('.menu_2depth > li > a');
+const main_3depth = document.querySelectorAll('.menu_3depth > li');
+const main_sub = [...main_2depth, ...main_3depth];
 
 const header_sub = document.querySelectorAll('.header-sub > li')
 
@@ -26,9 +28,15 @@ header_sub.forEach((el, index)=>{
                 })
             }
         })
+        main_sub.forEach((el)=>{
+            el.classList.remove('open');
+
+            if(header_sub[index].dataset.route == el.dataset.route) {
+                main_sub[index].classList.add('open');
+            }
+        })
     })
 })
-
 
 main_2depth.forEach((el, index)=>{
     el.addEventListener(("click"),(e)=>{
@@ -49,9 +57,11 @@ main_2depth.forEach((el, index)=>{
                 })
             }
         })
+        main_sub.forEach((el)=>{
+            el.classList.remove('open');
+        })
     })
 })
-
 
 active_tabList.forEach((el, index)=>{
     el.addEventListener(("click"), (e)=>{
@@ -91,8 +101,27 @@ active_tabList.forEach((el, index)=>{
             })
         }
 
+        if(el.classList.contains('active')) {
+            main_sub.forEach((el)=>{
+                el.classList.remove('open');
+                
+                if(active_tabList[index].dataset.route == el.dataset.route) {
+                    main_sub[index].classList.add('open');
+                }
+            })
+        }
+
     })
 
+})
+
+main_3depth.forEach((el)=>{
+    el.addEventListener(("click"),(e)=>{
+        e.preventDefault();
+        main_sub.forEach((el)=>{
+            el.classList.remove('open');
+        })
+    })
 })
 
 
