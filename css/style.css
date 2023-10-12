@@ -1219,243 +1219,56 @@ a {
 }
 @media (max-width: 1600px) {
   .portfolio {
-    padding: 50px;
+    padding: 50px 100px 70px;
   }
   .portfolio .portfolio-title {
-    width: 100%;
-    padding: 0px 0 50px;
+    padding: 0 0 80px;
   }
-  .portfolio .portfolio-title > h2 {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
-  .portfolio .portfolio-title > h2 > img {
-    height: 100%;
-  }
-  .portfolio .portfolio-title > h2 > img:nth-of-type(2) {
-    display: none;
-  }
-  .portfolio .portfolio-title > h2::after {
-    display: block;
-    content: "";
-    width: 3px;
-    height: 40%;
-    background-color: #333;
-    opacity: 1;
-    animation: opacity 1s step-end infinite;
-  }
-  .portfolio > ul {
-    width: 100%;
-  }
+}
+@media (max-width: 1300px) {
   .portfolio > ul > li {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background-color: #f8f8f8;
-    margin-bottom: 50px;
-    border-radius: 20px;
-    display: flex;
-    padding: 20px 50px;
-  }
-  .portfolio > ul > li .content-left {
-    width: 50%;
-    height: 100%;
-    position: relative;
-  }
-  .portfolio > ul > li .content-left .mokup {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .portfolio > ul > li .content-left .mokup > img {
-    width: 70%;
-    object-fit: cover;
-  }
-  .portfolio > ul > li .content-left .mokup-bg {
-    width: 50%;
-    height: 50%;
-    opacity: 0.7;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  .portfolio > ul > li .content-left::after {
-    display: block;
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 2px;
-    height: 80%;
-    transform: translateY(-50%);
-  }
-  .portfolio > ul > li .content-right {
-    width: 60%;
-    padding: 35px 0;
-    position: relative;
-  }
-  .portfolio > ul > li .content-right .content-logo {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .portfolio > ul > li .content-right .content-logo > img {
-    height: 100%;
-    object-fit: cover;
+    padding: 20px;
   }
   .portfolio > ul > li .content-right h2 {
-    font-size: 26px;
-    font-family: "NotoSansKR";
-    margin-bottom: 20px;
-    color: #000;
+    font-size: 22px;
   }
-  .portfolio > ul > li .content-right .skills {
+}
+@media (max-width: 1200px) {
+  .portfolio {
+    padding: 30px 50px 50px;
+  }
+  .portfolio .portfolio-title {
+    padding: 0 0 50px;
+  }
+  .portfolio .portfolio-title > h2 {
+    height: 60px;
+  }
+  .portfolio > ul > li {
+    height: auto;
+    min-height: 400px;
+    flex-direction: column;
     display: flex;
-    gap: 0px;
-    margin-bottom: 20px;
+    padding: 40px;
   }
-  .portfolio > ul > li .content-right .skills > li {
-    width: 25px;
-    height: 25px;
-  }
-  .portfolio > ul > li .content-right .skills > li > img {
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
-  }
-  .portfolio > ul > li .content-right .content-page {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    gap: 10px;
-  }
-  .portfolio > ul > li .content-right .content-page > li > a {
-    color: #333;
-    font-weight: bold;
-    font-family: "NotoSansKR";
-    font-size: 14px;
-    transition: background-color 0.3s;
-    position: relative;
-  }
-  .portfolio > ul > li .content-right .content-page > li > a::after {
-    display: block;
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    transition: 0.5s;
-  }
-  .portfolio > ul > li .content-right .content-page > li > a:hover::after {
+  .portfolio > ul > li .content-left {
     width: 100%;
+    height: 200px;
   }
-  .portfolio > ul > li .content-right .content-txt li {
-    margin-bottom: 10px;
+  .portfolio > ul > li .content-left .mokup {
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  .portfolio > ul > li .content-right .content-txt li p {
-    display: flex;
-    gap: 30px;
+  .portfolio > ul > li .content-left .mokup-bg {
+    opacity: 0.3;
   }
-  .portfolio > ul > li .content-right .content-txt li p > span {
-    min-width: 150px;
-    color: #000;
-  }
-  .portfolio > ul > li .content-right .content-txt li p > span:nth-of-type(1) {
-    font-weight: bold;
+  .portfolio > ul > li .content-right {
+    width: 100%;
+    padding: 35px;
   }
   .portfolio > ul > li .content-right .content-nextBtn {
-    position: absolute;
-    bottom: 30px;
-    right: 40px;
-    display: block;
-    padding: 7px 40px;
-    color: #fff;
-    font-weight: bold;
-  }
-  .portfolio > ul > li.vscode-contentBox .content-left .mokup-bg {
-    bottom: auto;
-    right: auto;
-    top: 0;
-    left: 0;
-  }
-  .portfolio > ul > li.vscode-contentBox .content-right .content-logo > img {
-    height: 80%;
-  }
-  .portfolio > ul > li.vscode-contentBox .content-right .content-page > li > a::after {
-    background-color: #0078D4;
-  }
-  .portfolio > ul > li.vscode-contentBox .content-right .content-nextBtn {
-    background-color: #0078D4;
-  }
-  .portfolio > ul > li.visitjeju-contentBox .content-left .mokup-bg {
-    bottom: 20px;
-  }
-  .portfolio > ul > li.visitjeju-contentBox .content-right .content-logo {
-    height: 25px;
-  }
-  .portfolio > ul > li.visitjeju-contentBox .content-right .content-page > li > a::after {
-    background-color: #ef6d00;
-  }
-  .portfolio > ul > li.visitjeju-contentBox .content-right .content-nextBtn {
-    background-color: #ef6d00;
-  }
-  .portfolio > ul > li.sinsegae-contentBox .content-left .mokup-bg {
-    right: auto;
-    bottom: auto;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .portfolio > ul > li.sinsegae-contentBox .content-right .content-logo > img {
-    height: 80%;
-  }
-  .portfolio > ul > li.sinsegae-contentBox .content-right .content-logo > img:nth-of-type(3) {
-    display: none;
-  }
-  .portfolio > ul > li.sinsegae-contentBox .content-right .content-page > li > a::after {
-    background-color: #d92128;
-  }
-  .portfolio > ul > li.sinsegae-contentBox .content-right .content-nextBtn {
-    background-color: #d92128;
-  }
-  .portfolio > ul > li.shear-contentBox .content-left .mokup-bg {
-    bottom: auto;
-    top: 0;
-  }
-  .portfolio > ul > li.shear-contentBox .content-right .content-logo > img {
-    height: 70%;
-  }
-  .portfolio > ul > li.shear-contentBox .content-right .content-page > li > a::after {
-    background-color: #eeb7ac;
-  }
-  .portfolio > ul > li.shear-contentBox .content-right .content-nextBtn {
-    background-color: #eeb7ac;
-  }
-  .portfolio > ul > li.lush-contentBox .content-left .mokup-bg {
-    bottom: auto;
-    right: auto;
-    top: 0;
-    left: 0;
-  }
-  .portfolio > ul > li.lush-contentBox .content-right .content-logo > img {
-    height: 60%;
-  }
-  .portfolio > ul > li.lush-contentBox .content-right .content-logo > img:last-of-type {
-    display: none;
-  }
-  .portfolio > ul > li.lush-contentBox .content-right .content-page > li > a::after {
-    background-color: #000;
-  }
-  .portfolio > ul > li.lush-contentBox .content-right .content-nextBtn {
-    background-color: #000;
+    bottom: 35px;
+    right: 35px;
   }
 }
 .profile {
