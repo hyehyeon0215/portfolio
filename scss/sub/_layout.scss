@@ -373,7 +373,7 @@
                 width: 200px;
                 height: calc(100vh - 55px);
                 background-color: #f8f8f8;
-                border-right: 1px solid #dfdfdf;
+                border-right: 1px solid $light-border;
                 display: flex;
                 flex-direction: column;
 
@@ -838,6 +838,7 @@
         border-top: 1px solid $light-border;
         display: flex;
         gap: 10px;
+        position: relative;
 
         .blue-icon {
             width: 40px;
@@ -1049,7 +1050,7 @@
 
                 .main-menu {
                     background-color: $dark;
-                    border-right: $dark-border;
+                    border-right: 1px solid $dark-border;
 
                     >li {
                         &:nth-of-type(1) {
@@ -1220,7 +1221,6 @@
         footer {
             background-color: $dark;
             border-top: 1px solid $dark-border;
-
             ul {
                 li {
                     img {
@@ -1237,6 +1237,17 @@
                         color: #bbb;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .vs-wrap {
+    
+        header {
+            .header-center {
+                display: none;
             }
         }
     }
