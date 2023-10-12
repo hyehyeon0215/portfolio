@@ -1643,6 +1643,11 @@ a {
   background-color: #eee;
 }
 
+@media (max-width: 1700px) {
+  .profile .profile-content .profile-txt > h2 {
+    font-size: 36px;
+  }
+}
 @media (max-width: 1600px) {
   .profile {
     padding: 50px 100px 70px;
@@ -1656,6 +1661,7 @@ a {
     gap: 80px;
   }
   .profile .profile-content .profile-txt > h2 {
+    font-size: 40px;
     margin-bottom: 40px;
   }
   .profile .profile-content .profile-txt ul {
@@ -1665,109 +1671,29 @@ a {
     gap: 80px;
     margin-bottom: 50px;
   }
+}
+@media (max-width: 1200px) {
+  .profile {
+    padding: 30px 50px 50px;
+  }
+  .profile .profile-title > h2 {
+    height: 60px;
+  }
+  .profile .profile-content .profile-txt > h2 {
+    font-size: 30px;
+  }
+  .profile .profile-content .profile-txt ul li {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
   .profile .profile-content .profile-box > div h3 {
-    font-size: 26px;
-    margin-bottom: 30px;
-    color: #000;
-  }
-  .profile .profile-content .profile-box > div h3 > i {
-    margin-right: 10px;
-    color: #555;
-  }
-  .profile .profile-content .profile-box > div:first-of-type {
-    width: 100%;
-    height: 30%;
-  }
-  .profile .profile-content .profile-box > div:first-of-type ul {
-    display: flex;
-    width: 100%;
-    gap: 20px;
-  }
-  .profile .profile-content .profile-box > div:first-of-type ul li {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .profile .profile-content .profile-box > div:first-of-type ul li > img {
-    width: 60%;
-    object-fit: cover;
-  }
-  .profile .profile-content .profile-box > div:last-of-type {
-    width: 100%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+    font-size: 24px;
   }
   .profile .profile-content .profile-box > div:last-of-type > ul {
     width: 100%;
   }
-  .profile .profile-content .profile-box > div:last-of-type > ul > li {
-    display: flex;
-    width: 100%;
-    height: 30px;
-    gap: 100px;
-    align-items: center;
-  }
   .profile .profile-content .profile-box > div:last-of-type > ul > li span {
-    display: inline-block;
-    font-size: 16px;
-    position: relative;
-    color: #000;
-  }
-  .profile .profile-content .profile-box > div:last-of-type > ul > li span:first-of-type {
-    font-weight: bold;
-  }
-  .profile .profile-content .profile-box > div:last-of-type > ul > li span:first-of-type::after {
-    display: block;
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 1px;
-    background-color: #888;
-    top: 50%;
-    left: calc(100% + 15px);
-    opacity: 0.2;
-  }
-  .vs-wrap.dark-theme .profile .profile-title > h2 img:nth-of-type(1) {
-    display: none;
-  }
-  .vs-wrap.dark-theme .profile .profile-title > h2 img:nth-of-type(2) {
-    display: block;
-  }
-  .vs-wrap.dark-theme .profile .profile-title > h2::after {
-    background-color: #999;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-txt h2 {
-    color: #fff;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-txt ul li i {
-    color: #888;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-txt ul li:nth-of-type(2) i {
-    color: #ddd;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-txt ul li span {
-    color: #f8f8f8;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-box > div h3 {
-    color: #fff;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-box > div h3 > i {
-    color: #888;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-box > div:first-of-type ul li {
-    background-color: rgba(248, 248, 248, 0.2);
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-box > div:last-of-type ul li span {
-    color: #f8f8f8;
-  }
-  .vs-wrap.dark-theme .profile .profile-content .profile-box > div:last-of-type ul li span:first-of-type::after {
-    background-color: #eee;
+    font-size: 15px;
   }
 }
 @keyframes opacity {
