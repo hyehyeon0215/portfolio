@@ -26,13 +26,6 @@ header_sub.forEach((el, index)=>{
                 })
             }
         })
-        main_2depth.forEach((el)=>{
-            el.classList.remove('open');
-
-            if(header_sub[index].dataset.route == el.dataset.route) {
-                main_sub[index].classList.add('open');
-            }
-        })
     })
 })
 
@@ -56,9 +49,6 @@ main_2depth.forEach((el, index)=>{
                 })
             }
         })
-        main_sub.forEach((el)=>{
-            el.classList.remove('open');
-        })
     })
 })
 
@@ -66,7 +56,6 @@ main_2depth.forEach((el, index)=>{
 active_tabList.forEach((el, index)=>{
     el.addEventListener(("click"), (e)=>{
         e.preventDefault();
-        console.log(e.target);
         if(e.target.classList.contains('tabclose')) {
             el.classList.remove('on');
             el.classList.remove('active');
@@ -98,15 +87,6 @@ active_tabList.forEach((el, index)=>{
                 el.classList.remove('active');
                 if(el.classList.contains(content)) {
                     el.classList.add('active');
-                }
-            })
-        }
-
-        if(el.classList.contains('active')) {
-            main_sub.forEach((el)=>{
-                el.classList.remove('open');
-                if(active_tabList[index].dataset.route == el.dataset.route) {
-                    main_sub[index].classList.add('open');
                 }
             })
         }
